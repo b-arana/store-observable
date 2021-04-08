@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Song } from '../../interface/state';
 
 @Component({
@@ -14,10 +14,12 @@ import { Song } from '../../interface/state';
           <span>{{ item.track }}</span>
           <div
             class="songs-list__favourite"
+            (click)="toggleItem(i, 'favourite')"
             [class.active]="item.favourite"
           ></div>
           <div
             class="songs-list__listened"
+            (click)="toggleItem(i, 'listened')"
             [class.active]="item.listened"
           ></div>
         </li>
@@ -29,7 +31,19 @@ import { Song } from '../../interface/state';
 export class SongsListComponent implements OnInit {
   @Input()
   list: Song[];
+
+  @Output()
+  toggle = new EventEmitter<any>();
+
   constructor() {}
 
   ngOnInit() {}
+
+  toggleItem(index: number, prop: string) {
+
+    const track = this.list[index];
+    this.toggle.emit({
+      track: { ...track, [prop]: !track[prop] },
+    });
+  }
 }

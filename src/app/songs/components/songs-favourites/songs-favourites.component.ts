@@ -9,10 +9,11 @@ import { Song } from '../../interface/state';
   selector: 'songs-favourites',
   template: `
     <div class="songs">
-      <songs-list [list]="favourites$ | async"> Favourites </songs-list>
+      <songs-list [list]="favourites$ | async" (toggle)="onToggle($event)">
+        Favourites
+      </songs-list>
     </div>
-  `,
-  styleUrls: ['./songs-favourites.component.scss'],
+  `
 })
 export class SongsFavouritesComponent implements OnInit {
   favourites$: Observable<Song[]>;
@@ -24,5 +25,9 @@ export class SongsFavouritesComponent implements OnInit {
       filter(Boolean),
       map((playlist: Song[]) => playlist.filter((track) => track.favourite))
     );
+  }
+
+  onToggle(event: any) {
+    this.songsService.updateSong(event);
   }
 }

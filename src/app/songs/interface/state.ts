@@ -1,5 +1,5 @@
 export interface State {
-  playlist: any []
+  playlist: Song[]
 }
 
 export interface Song {

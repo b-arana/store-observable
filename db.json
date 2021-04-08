@@ -5,14 +5,14 @@
       "artist": "Oasis",
       "track": "Half The World Away",
       "listened": false,
-      "favourite": true
+      "favourite": false
     },
     {
       "id": 2,
       "artist": "Pink Floyd",
       "track": "Wish You Were Here",
       "listened": true,
-      "favourite": false
+      "favourite": true
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "id": 4,
       "artist": "Third Eye Blind",
       "track": "Get Me Out Of Here",
-      "listened": true,
+      "listened": false,
       "favourite": false
     },
     {
@@ -39,15 +39,15 @@
       "id": 6,
       "artist": "Sia",
       "track": "Cheap Thrills",
-      "listened": true,
-      "favourite": true
+      "listened": false,
+      "favourite": false
     },
     {
       "id": 7,
       "artist": "Birdy",
       "track": "Wild Horses",
       "listened": false,
-      "favourite": true
+      "favourite": false
     },
     {
       "id": 8,
