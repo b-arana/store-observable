@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from './playlist/store';
+import { Store } from './songs/store';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ export class AppComponent {
     this.store.set('playlist', [
       { id: 1, name: 'All The Small Things' },
       { id: 2, name: 'Wish You Were Here' },
+      { id: 3, name: 'Wild horses' },
     ]);
   }
 }
